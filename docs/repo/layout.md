@@ -2,7 +2,7 @@
 
 This repository contains several Rust crates that implement the different building blocks of an Ethereum node. The high-level structure of the repository is as follows:
 
-Generally reth is composed of a few components, with supporting crates. The main components can be defined as:
+Generally, reth is composed of a few components, with supporting crates. The main components can be defined as:
 
 - [Project Layout](#project-layout)
   - [Documentation](#documentation)
@@ -43,7 +43,7 @@ These crates are related to the database.
 - [`storage/libmdbx-rs`](../../crates/storage/libmdbx-rs): Rust bindings for [libmdbx](https://libmdbx.dqdkfa.ru). A fork of an earlier Apache-licensed version of [libmdbx-rs][libmdbx-rs].
 - [`storage/db`](../../crates/storage/db): Strongly typed Database abstractions (transactions, cursors, tables) over lower level database backends.
   - Implemented backends: mdbx
-- [`storage/provider`](../../crates/storage/provider): Traits which provide a higher level api over the database to access the Ethereum state and historical data (transactions, blocks etc.)
+- [`storage/provider`](../../crates/storage/provider): Traits which provide a higher level api over the database to access the Ethereum state and historical data (transactions, blocks, etc.)
 
 
 ### Networking
@@ -81,7 +81,7 @@ The networking component mainly lives in [`net/network`](../../crates/net/networ
 
 Different consensus mechanisms.
 
-- [`consensus/common`](../../crates/consensus/common): Common consensus functions and traits (e.g. fee calculation)
+- [`consensus/common`](../../crates/consensus/common): Common consensus functions and traits (e.g., fee calculation)
 
 ### Execution
 
@@ -112,7 +112,7 @@ The RPC component mainly lives in [`rpc/rpc`](../../crates/rpc/rpc), which imple
 - `txpool_`
 - `web3_`
 
-These RPC interface is defined in [`rpc/rpc-api`](../../crates/rpc/rpc-api).
+This RPC interface is defined in [`rpc/rpc-api`](../../crates/rpc/rpc-api).
 
 The engine API ([`engine_`][engine-spec]) lives in [`rpc/rpc-engine-api`](../../crates/rpc/rpc-engine-api) (this is *not* an interface crate despite the confusing name).
 
@@ -120,7 +120,7 @@ There is also a crate to easily configure an RPC server: [`rpc/rpc-builder`](../
 
 #### Transports
 
-The RPC component is based on the [`jsonrpsee`][jsonrpsee] crate which provides JSONRPC over WebSockets and HTTP.
+The RPC component is based on the [`jsonrpsee`][jsonrpsee] crate, which provides JSONRPC over WebSockets and HTTP.
 
 The IPC transport lives in [`rpc/ipc`](../../crates/rpc/ipc).
 
@@ -135,8 +135,8 @@ The IPC transport lives in [`rpc/ipc`](../../crates/rpc/ipc).
 
 #### Utilities Crates
 
-- [`rpc/rpc-types-compat`](../../crates/rpc/rpc-types-compat): This crate various helper functions to convert between reth primitive types and rpc types.
-- [`rpc/layer`](../../crates/rpc/rpc-layer/): Some RPC middleware layers (e.g. `AuthValidator`, `JwtAuthValidator`)
+- [`rpc/rpc-types-compat`](../../crates/rpc/rpc-types-compat): This creates various helper functions to convert between reth primitive types and RPC types.
+- [`rpc/layer`](../../crates/rpc/rpc-layer/): Some RPC middleware layers (e.g., `AuthValidator`, `JwtAuthValidator`)
 - [`rpc/rpc-testing-util`](../../crates/rpc/rpc-testing-util/): Reth RPC testing helpers
 
 ### Payloads
@@ -153,7 +153,7 @@ These crates define primitive types or algorithms.
 
 - [`primitives`](../../crates/primitives): Commonly used types in Reth.
 - [`primitives-traits`](../../crates/primitives-traits/): Common abstracted types in reth.
-- [`trie`](../../crates/trie): An implementation of a Merkle Patricia Trie used for various roots (e.g. the state root) in Ethereum.
+- [`trie`](../../crates/trie): An implementation of a Merkle Patricia Trie used for various roots (e.g., the state root) in Ethereum.
 
 ### Optimism
 
